@@ -1,0 +1,99 @@
+<resources>
+    <string name="app_name">PTManagment</string>
+    <string name="registration">Registration</string>
+    <string name="dont_have_account">Dont Have Account</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="title_activity_login" translatable="false">LoginActivity</string>
+    <string name="prompt_email" translatable="false">Email</string>
+    <string name="prompt_password" translatable="false">Password</string>
+    <string name="action_sign_in" translatable="false">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="content_des">image</string>
+    <string name="title_login">LOGIN</string>
+    <string name="login_txt">Login</string>
+    <string name="email_id_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="forgot_pass_lbl">Forgot Password?</string>
+    <string name="btn_login_lbl">Login</string>
+    <string name="create_account">Create An Account</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="agrremrnt_txt">I Agree To The</string>
+    <string name="have_account">Already Have An Account?</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="allready_Exist">ERROR This Email is Allready Exist</string>
+    <string name="progress_bar">Please Wait....</string>
+    <string name="link">link</string>
+    <string name="reset">Reset</string>
+    <string name="sent_success">The Email Sent Successful</string>
+    <string name="not_valid">Not Valid Email Address</string>
+    <string name="btn_sell_lbl">Sell</string>
+    <string name="btn_buy_lbl">Buy</string>
+    <string name="main_choose_action">Please Choose Your Action</string>
+    <string name="product_name">Product Name</string>
+    <string name="choose">Choose</string>
+    <string name="upload">Upload</string>
+    <string name="product_description">Product Description</string>
+    <string name="product_price">Product Price</string>
+    <string name="more_information">More Information</string>
+    <string name="search">Search</string>
+    <string name="item_name">Item Name :</string>
+    <string name="items_description">Items Description :</string>
+    <string name="items_price">Items Price :</string>
+    <string name="items_more_info">Items More Info :</string>
+    <string name="update_item_info">Update Item Info</string>
+    <string name="back">Back</string>
+    <string name="for_item_update_press_the_relevant_item">For item update press the relevant item</string>
+    <string name="log_out">Log Out</string>
+    <string name="food_order">Food Order</string>
+    <string name="main">Main</string>
+    <string name="working_plan">Working Plan</string>
+    <string name="please_choose_a_resturan">Please Choose A Resturan</string>
+    <string name="order">Order</string>
+    <string name="clear">Clear</string>
+    <string name="cibus_link">https://www.cibus-sodexo.co.il/</string>
+    <string name="shift_group">Shift Group</string>
+    <string name="admin_user">Admin User</string>
+    <string name="choose_department">Choose Department</string>
+    <string name="add_new_user">Add New User</string>
+    <string name="new_resturant">New Resturant</string>
+    <string name="add_new_restaurant">Add New Restaurant</string>
+    <string name="restaurant_name">Restaurant Name</string>
+    <string name="restaurant_address">Restaurant Address</string>
+    <string name="restaurant_phone_number">Restaurant Phone Number</string>
+    <string name="restaurant_email">Restaurant Email</string>
+    <string name="department_configuration">Department Configuration</string>
+    <string name="department_name">Department Name</string>
+    <string name="update_departments">update Departments</string>
+    <string name="department">Department</string>
+    <string name="type_new_password">Type New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="change">Change</string>
+    <string name="load_users_from_excel">Load Users From Server File</string>
+    <string name="line">======================================================</string>
+    <string name="load">Upload</string>
+    <string name="navigation_bar">Navigation Bar</string>
+    <string name="open_app">Open</string>
+    <string name="close_app">Close</string>
+    <string name="add_restaurants_from_server">Add Restaurants from server</string>
+    <string name="home">Home</string>
+    <string name="food_order_menu">Food Order</string>
+    <string name="messages">Messages</string>
+    <string name="my_shift">My Shift</string>
+    <string name="change_password">Change Password</string>
+    <string name="add_new_user_menu">Add New User</string>
+    <string name="add_new_restaurant_menu">Add New Restaurant</string>
+    <string name="add_new_department_menu">Add New Department</string>
+    <string name="logout">Logout</string>
+    <string name="send_food_order">Send Food order</string>
+
+
+</resources>

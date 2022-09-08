@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+        <item
+            android:id="@+id/home"
+            android:title="@string/home"
+            android:icon="@drawable/ic_baseline_home_24"/>
+        <item
+            android:id="@+id/food_order"
+            android:title="@string/food_order_menu"
+            android:icon="@drawable/ic_baseline_fastfood_24"/>
+
+        <item
+            android:id="@+id/message"
+            android:title="@string/messages"
+            android:icon="@drawable/ic_baseline_message_24"/>
+
+        <item
+            android:id="@+id/shift"
+            android:title="@string/my_shift"
+            android:icon="@drawable/ic_baseline_access_time_24"/>
+        <item
+            android:id="@+id/new_password_nav"
+            android:title="@string/change_password"
+            android:icon="@drawable/ic_baseline_change_circle_24"/>
+
+    <group
+        android:id="@+id/admins">
+
+        <item
+            android:id="@+id/add_user"
+            android:title="@string/add_new_user_menu"
+            android:icon="@drawable/ic_baseline_person_add_24"/>
+        <item
+            android:id="@+id/add_rest"
+            android:title="@string/add_new_restaurant_menu"
+            android:icon="@drawable/ic_baseline_restaurant_24"/>
+        <item
+            android:id="@+id/add_dep"
+            android:title="@string/add_new_department_menu"
+            android:icon="@drawable/ic_baseline_group_work_24"/>
+
+    </group>
+        <item
+            android:id="@+id/nav_logout"
+            android:title="@string/logout"
+            android:icon="@drawable/ic_baseline_exit_to_app_24"/>
+
+</menu>

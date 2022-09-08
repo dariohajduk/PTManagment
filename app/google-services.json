@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "533611313630",
+    "firebase_url": "https://ptmanagment-9b6d7-default-rtdb.firebaseio.com",
+    "project_id": "ptmanagment-9b6d7",
+    "storage_bucket": "ptmanagment-9b6d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533611313630:android:62a2987cbe5a0ffdaa054f",
+        "android_client_info": {
+          "package_name": "com.example.ptmanagment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "533611313630-kl1d9cp9lioikocvv1gd74sl4vggo0st.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCXFNsP8A-9vKChHshUR59xSWh5phFImYA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "533611313630-kl1d9cp9lioikocvv1gd74sl4vggo0st.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
