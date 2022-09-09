@@ -216,12 +216,14 @@ public class NewUserFragment extends Fragment {
         userDB = database.getReference("Users");
         //endregion
 
+
         if(user!=null){
             firstName.setText(user.getFirst());
             lastName.setText(user.getLast());
             shift.setText(user.getShift());
             emailTxt.setText(user.getEmail());
         }
+
         //region Elements Configuration
         context = this.getContext();
         loadingBar = new LoadingBar();
@@ -275,7 +277,8 @@ public class NewUserFragment extends Fragment {
                                     file = new File(local.getAbsolutePath());
                                     ExcelToObject excelToObject = new ExcelToObject();
                                     excelToObject.UploadeUserWithExcel(file, refUserFragment);
-                                    Toast.makeText(getActivity(), "You Uploaded all the new users", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getActivity(), "You Uploaded all the new users: "
+                                            +excelToObject.getEmployeeList().size()+" users", Toast.LENGTH_LONG).show();
 
                                 }
                             });
@@ -320,6 +323,7 @@ public class NewUserFragment extends Fragment {
 
     }
 
+    //region Methods
     public void ClearEditText(EditText editText) {
         //Clear Error Inputs In EditText
         boolean valid = false;
@@ -331,4 +335,5 @@ public class NewUserFragment extends Fragment {
         assert getFragmentManager() != null;
         getFragmentManager().beginTransaction().replace(R.id.fragment_layout, homeFragment).commit();
     }
+    //endregion
 }

@@ -18,6 +18,7 @@ import com.example.ptmanagment.fragments.ChangePassword;
 import com.example.ptmanagment.fragments.DepartmentConfiguration;
 import com.example.ptmanagment.fragments.FoodOrderFragment;
 import com.example.ptmanagment.fragments.HomeFragment;
+import com.example.ptmanagment.fragments.MessageFragment;
 import com.example.ptmanagment.fragments.NewRestFragment;
 import com.example.ptmanagment.fragments.NewUserFragment;
 import com.google.android.material.navigation.NavigationView;
@@ -152,6 +153,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout,
                             new FoodOrderFragment()).commit();
+                break;
+            case R.id.message:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout,
+                        new MessageFragment()).commit();
                 break;
             case R.id.add_user:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout,

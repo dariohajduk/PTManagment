@@ -31,7 +31,13 @@ public class ExcelToObject {
     private DatabaseReference userDB;
     private DatabaseReference restDB;
 
+    public ArrayList<User> getEmployeeList() {
+        return employeeList;
+    }
 
+    public ArrayList<Restaurant> getRestList() {
+        return restList;
+    }
 
     public void UploadeUserWithExcel(File file, NewUserFragment newUserFragment) {
         try {
@@ -48,18 +54,23 @@ public class ExcelToObject {
                 Row ro = sheet.getRow(i);
                 for (int j = ro.getFirstCellNum(); j <= ro.getLastCellNum(); j++) {
                     Cell ce = ro.getCell(j);
+
                     if (j == 0) {
                         //If you have Header in text It'll throw exception because it won't get NumericValue
                         e.setFirst(ce.getStringCellValue());
+                        j++;
                     }
                     if (j == 1) {
                         e.setLast(ce.getStringCellValue());
+                        j++;
                     }
                     if (j == 2) {
                         e.setEmail(ce.getStringCellValue());
+                        j++;
                     }
                     if (j == 3) {
                         e.setDepartment(ce.getStringCellValue());
+                        j++;
                     }
                     if (j == 4) {
                         e.setShift(ce.getStringCellValue());

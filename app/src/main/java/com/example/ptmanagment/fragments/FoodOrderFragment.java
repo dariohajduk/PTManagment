@@ -33,6 +33,8 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class FoodOrderFragment extends Fragment {
+
+    //region Private Variables
     private FirebaseDatabase database;
     private DatabaseReference restDB ,mealDB,drinkDB,orderDB;
     private StorageReference storageReference;
@@ -45,9 +47,13 @@ public class FoodOrderFragment extends Fragment {
     private User connected;
     private MainActivity refMain;
 
+    //endregion
+
+
+    //region Constructors
     public FoodOrderFragment() {
     }
-
+    //endregion
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -152,6 +158,7 @@ public class FoodOrderFragment extends Fragment {
         //endregion
 
         //region Buttons Action
+        //Clear button
         clear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -159,6 +166,7 @@ public class FoodOrderFragment extends Fragment {
                 drink.setSelection(0);
             }
         });
+        //Order button
         order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -172,8 +180,6 @@ public class FoodOrderFragment extends Fragment {
             }
         });
         //endregion
-
-
 
         return view;
 

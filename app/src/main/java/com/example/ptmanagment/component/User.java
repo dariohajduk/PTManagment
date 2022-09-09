@@ -15,7 +15,7 @@ public class User {
 
     //endregion
 
-    //region Constractors
+    //region Constructors
     public User() {
     }
 
@@ -30,13 +30,15 @@ public class User {
         this.shift = shift;
     }
 
-//endregion
 
-    public String getDisplayName() {
-        return first+" "+last;
-    }
+    //endregion
+
 
     //region Getters
+    public String getDisplayName() {
+        return first + " " + last;
+    }
+
     public String getUid() {
         return uid;
     }

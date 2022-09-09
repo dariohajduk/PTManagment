@@ -94,6 +94,10 @@
     <string name="add_new_department_menu">Add New Department</string>
     <string name="logout">Logout</string>
     <string name="send_food_order">Send Food order</string>
+    <string name="message_from">Message From:</string>
+    <string name="sent_at">Sent At :</string>
+    <string name="read">Read</string>
+    <string name="searchUser">Search a User From List Below</string>
 
 
 </resources>

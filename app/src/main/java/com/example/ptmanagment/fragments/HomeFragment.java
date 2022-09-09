@@ -5,12 +5,15 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import com.example.ptmanagment.R;
@@ -28,10 +31,12 @@ public class HomeFragment extends Fragment {
     private MainActivity refMainActivity;
     private User user, selecteduser;
     private Button sendFoodOrder, usersListBtn;
-
+    private EditText inputSearch;
     private ListView usersList;
     private FirebaseDatabase database;
     private DatabaseReference logedUserDetails, userDB;
+    private ArrayAdapter<String> arr;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -46,6 +51,9 @@ public class HomeFragment extends Fragment {
         refMainActivity = (MainActivity) this.getActivity();
         assert refMainActivity != null;
         user = refMainActivity.refUser;
+        inputSearch = view.findViewById(R.id.search_user);
+        inputSearch.setVisibility(View.INVISIBLE);
+
         //region User Is Manager
         if (user.isManager()) {
             ManagerUser();
@@ -61,11 +69,13 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
             }
         });
+
         usersListBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                inputSearch.setVisibility(View.VISIBLE);
+                usersList.setAdapter(null);
                 ArrayList<String> list = refMainActivity.users;
-                ArrayAdapter<String> arr;
                 arr = new ArrayAdapter<String>(getActivity(), com.google.android.material.R.layout.support_simple_spinner_dropdown_item, list);
                 usersList.setAdapter(arr);
 
@@ -83,6 +93,7 @@ public class HomeFragment extends Fragment {
                                     selecteduser = user1;
                                 }
                             }
+
                             @Override
                             public void onCancelled(@NonNull DatabaseError error) {
                             }
@@ -92,6 +103,25 @@ public class HomeFragment extends Fragment {
                     }
                 });
             }
+        });
+
+        inputSearch.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void onTextChanged(CharSequence cs, int arg1, int arg2, int arg3) {
+                // When user changed the Text
+                arr.getFilter().filter(cs);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
+            }
+
         });
     }
 }

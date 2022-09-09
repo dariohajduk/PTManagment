@@ -153,7 +153,8 @@ public class EmailAndPassword extends Activity {
     public void createAccount2(User user, NewUserFragment userFragment) {
         //Upload data to the database
         String password = "123456789";
-        FirebaseAuth.getInstance().createUserWithEmailAndPassword(user.getEmail(), password);
+        if (!(user.getEmail() == null))
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(user.getEmail(), password);
     }
 
 }
