@@ -174,7 +174,7 @@ public class FoodOrderFragment extends Fragment {
                 Order order = new Order(meal.getSelectedItem().toString(),
                         restName.getSelectedItem().toString(),
                         drink.getSelectedItem().toString());
-                orderDB.child(connected.getDepartment()).child(connected.getFirst()+" "+connected.getLast())
+                orderDB.child(connected.getFirst()+" "+connected.getLast())
                         .setValue(order);
                 loadingBar.EndLoadingBar();
             }

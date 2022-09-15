@@ -13,12 +13,14 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.example.ptmanagment.R;
+import com.example.ptmanagment.component.Order;
 import com.example.ptmanagment.component.User;
 import com.example.ptmanagment.fragments.ChangePassword;
 import com.example.ptmanagment.fragments.DepartmentConfiguration;
 import com.example.ptmanagment.fragments.FoodOrderFragment;
 import com.example.ptmanagment.fragments.HomeFragment;
 import com.example.ptmanagment.fragments.MessageFragment;
+import com.example.ptmanagment.fragments.MyShiftFragment;
 import com.example.ptmanagment.fragments.NewRestFragment;
 import com.example.ptmanagment.fragments.NewUserFragment;
 import com.google.android.material.navigation.NavigationView;
@@ -42,10 +44,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private String password;
     public User refUser,selectedUser;
     public ArrayList<String> users;
+    public ArrayList<Order> orders;
     private String emailUser;
     private FirebaseDatabase database;
     private DatabaseReference logedUserDetails,userDB;
     public int weekOfYear;
+    private int newMsg;
+
+    //region Getters and Setters
+    public int getNewMsg() {
+        return newMsg;
+    }
+
+    public void setNewMsg(int newMsg) {
+        this.newMsg = newMsg;
+    }
+
+    //endregion
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +73,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         );
         //endregion
 
-        //TODO Create Date And Time Class
+
+        //region Elements Configuration
         users = new ArrayList<>();
         Calendar calendar = Calendar.getInstance(Locale.ENGLISH);
         weekOfYear = calendar.get(Calendar.WEEK_OF_YEAR);
@@ -75,6 +91,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         database = FirebaseDatabase.getInstance();
         logedUserDetails = database.getReference("Users");
         userDB = database.getReference("Users");
+        //endregion
+
+        //region Check if default password
         try {
             Bundle bundle = getIntent().getExtras();
             emailUser = bundle.getString("1");
@@ -89,6 +108,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } catch (Exception e) {
 
         }
+        //endregion
+
+        //region Logged in user
         logedUserDetails.orderByChild("email").equalTo(emailUser).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -118,7 +140,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             }
         });
+        //endregion
 
+        //region Users Data Base
        userDB.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -133,16 +157,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             }
         });
-
-
-
-
-
+       //endregion
     }
 
-
+    //region Navigation bar
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        if(newMsg>0)
+        {
+            MenuItem msgItem = findViewById(R.id.message);
+            msgItem.setTitle(msgItem.getTitle()+" "+newMsg);
+        }
 
         switch (item.getItemId()) {
             case R.id.home:
@@ -174,6 +200,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout,
                         new ChangePassword()).commit();
                 break;
+            case R.id.shift:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_layout,
+                        new MyShiftFragment()).commit();
+                break;
             case R.id.nav_logout:
                 this.finish();
                 break;
@@ -182,6 +212,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    //endregion
+
 
     @Override
     public void onBackPressed() {

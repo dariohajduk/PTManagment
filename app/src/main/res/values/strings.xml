@@ -98,6 +98,9 @@
     <string name="sent_at">Sent At :</string>
     <string name="read">Read</string>
     <string name="searchUser">Search a User From List Below</string>
+    <string name="choose_contact">Choose Contact</string>
+    <string name="send_to">Send to:</string>
+    <string name="workWeek">Production Plan Work Week: </string>
 
 
 </resources>

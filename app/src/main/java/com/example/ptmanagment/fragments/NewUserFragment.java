@@ -279,7 +279,6 @@ public class NewUserFragment extends Fragment {
                                     excelToObject.UploadeUserWithExcel(file, refUserFragment);
                                     Toast.makeText(getActivity(), "You Uploaded all the new users: "
                                             +excelToObject.getEmployeeList().size()+" users", Toast.LENGTH_LONG).show();
-
                                 }
                             });
                 } catch (IOException e) {
